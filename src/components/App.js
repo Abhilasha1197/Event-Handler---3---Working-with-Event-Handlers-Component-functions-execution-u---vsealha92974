@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/App.css';
-const App = () => {
+
+
+
+const App = () =>{
+
+  let inputInfo = {
+    text : '',
+    number : ''
+  }
+
+  const[Input,setInput] = useState(inputInfo);
 
   const handleInput = (event) =>{
    // use console.log
-          console.log(event.target.value);
+  inputInfo[event.target.id] = event.target.value ;
+
+  setInput({...inputInfo});
+  console.log(inputInfo);
+  
   }
 
   // do not change id of input elements
